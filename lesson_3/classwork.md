@@ -7,6 +7,6 @@
 ## Задание 4
 ![задание 4](images/clwr3.png)
 ## Задание 5
-![задание 5](images/clwr4.png)
+![задание 5](images/newclwr4.png)
 ## Задание 6
 ![задание 6](images/clwr5.png)
