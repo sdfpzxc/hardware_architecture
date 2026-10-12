@@ -1,4 +1,4 @@
-# hardware_architecture
+# Hardware architecture
 
 ## Это репозиторий по дисциплине Архитектура аппаратных средств
 
