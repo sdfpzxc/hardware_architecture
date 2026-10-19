@@ -17,10 +17,10 @@
 
 (A∧¬B)→(C∨¬A)(A∧¬B)→(C∨¬A)
 
-![схема 1 ](pic1pr.png)
+![схема 1 ](screens/pic1pr.png)
 
 ## Пример 2:
 
 ¬(A∧(B→C))∨D
 
-![схема 2 ](pic2pr.png)
+![схема 2 ](screens/pic2pr.png)
