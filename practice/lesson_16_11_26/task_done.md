@@ -1,4 +1,5 @@
-<img width="1566" height="945" alt="image" src="https://github.com/user-attachments/assets/e166fdda-8868-4c24-bebc-920bada1ff44" /># 10 задач для отработки BIOS/UEFI в Lenovo BIOS Simulator Center
+# 10 задач для отработки BIOS/UEFI в Lenovo BIOS Simulator Center
+
 Симулятор: https://download.lenovo.com/bsco/index.html
 
 **Выберите устройство ThinkPad (например, T14s Gen 5 или X1 Carbon Gen 12) в графическом режиме. Ниже — тайминг и критерии выполнения для каждой задачи.**
