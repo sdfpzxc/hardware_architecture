@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bios dz</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>Ниже представлены 10 практических заданий по BIOS/UEFI</p>
+<p>Все задания можно выполнить в <strong>Lenovo BIOS Simulator Center</strong> (<a href="https://download.lenovo.com/bsco/index.html">https://download.lenovo.com/bsco/index.html</a>), выбрав модель ThinkPad или ThinkCentre.</p>
+<hr>
+<h3 id="задача-1.-включение-аппаратной-виртуализации-intel-vt-x--amd-v">Задача 1. Включение аппаратной виртуализации (Intel VT-x / AMD-V)</h3>
+<p><strong>Цель:</strong> Научиться находить и активировать поддержку виртуализации — обязательное условие для работы VMware, Hyper-V и VirtualBox.<br>
+<strong>Задание:</strong> Перейдите в <strong>Config → CPU</strong> (или <strong>Advanced → CPU Setup</strong>). Найдите опцию <strong>Intel Virtualization Technology</strong> или <strong>AMD-V</strong>. Запишите текущее состояние (Enabled/Disabled). Если выключено — включите. Запишите точный путь к настройке.<br>
+<strong>Критерий готовности:</strong> Вы можете без подсказки указать, где включается виртуализация на устройстве Lenovo, и объяснить, зачем она нужна .</p>
+<hr>
+<h3 id="задача-2.-проверка-статуса-tpm-и-его-связь-с-bitlocker">Задача 2. Проверка статуса TPM и его связь с BitLocker</h3>
+<p><strong>Цель:</strong> Понять, где находится TPM и почему без него не работает шифрование диска Windows.<br>
+<strong>Задание:</strong> Перейдите в <strong>Security → Security Chip</strong> (или <strong>Trusted Platform Module</strong>). Проверьте текущее состояние (Enabled/Disabled). Если TPM отключён — включите его. Обратите внимание, требуется ли перезагрузка для применения. Запишите, в каком разделе меню находится эта опция.<br>
+<strong>Критерий готовности:</strong> Вы знаете путь к TPM и можете объяснить, что произойдёт с BitLocker при отключении TPM .</p>
+<hr>
+<h3 id="задача-3.-настройка-поведения-при-потере-питания-after-power-loss">Задача 3. Настройка поведения при потере питания (After Power Loss)</h3>
+<p><strong>Цель:</strong> Отработать настройку, критически важную для серверов и удалённых рабочих станций.<br>
+<strong>Задание:</strong> Перейдите в <strong>Power → After Power Loss</strong> (или <strong>AC Power Recovery</strong>). Посмотрите доступные варианты: <strong>Power Off</strong>, <strong>Power On</strong>, <strong>Last State</strong>. Выберите <strong>Power On</strong>, затем верните <strong>Last State</strong>. Запишите, какой вариант стоит по умолчанию.<br>
+<strong>Критерий готовности:</strong> Вы понимаете разницу между тремя режимами и можете выбрать правильный для сценария «сервер в удалённой стойке» .</p>
+<hr>
+<h3 id="задача-4.-отключение-secure-boot-и-проверка-последствий">Задача 4. Отключение Secure Boot и проверка последствий</h3>
+<p><strong>Цель:</strong> Понять, что происходит при отключении Secure Boot и когда это может понадобиться.<br>
+<strong>Задание:</strong> Перейдите в <strong>Security → Secure Boot</strong>. Переключите в <strong>Disabled</strong>. Обратите внимание, появляется ли предупреждение о рисках. Попробуйте найти, где отображается <strong>Secure Boot Status</strong> (Platform Mode, Secure Boot Mode). Затем верните <strong>Enabled</strong>.<br>
+<strong>Критерий готовности:</strong> Вы можете назвать две ситуации, когда требуется отключить Secure Boot (например, загрузка с неподписанного USB или установка некоторых версий Linux) .</p>
+<hr>
+<h3 id="задача-5.-настройка-порядка-загрузки-через-fast-boot">Задача 5. Настройка порядка загрузки через Fast Boot</h3>
+<p><strong>Цель:</strong> Понять, как Fast Boot влияет на доступ к меню загрузки и USB-устройствам.<br>
+<strong>Задание:</strong> Перейдите в <strong>Startup → Fast Boot</strong>. Если включено — отключите. Затем проверьте, изменилось ли что-то в доступности <strong>Boot Menu</strong> (F12). Включите Fast Boot обратно. Запишите, что изменилось.<br>
+<strong>Критерий готовности:</strong> Вы можете объяснить, почему при включённом Fast Boot компьютер иногда «не видит» загрузочную флешку .</p>
+<hr>
+<h3 id="задача-6.-установка-пароля-на-включение-power-on-password">Задача 6. Установка пароля на включение (Power-On Password)</h3>
+<p><strong>Цель:</strong> Отработать установку пароля, который запрашивается до загрузки ОС — базовый уровень физической безопасности.<br>
+<strong>Задание:</strong> Перейдите в <strong>Security → Password → Power-On Password</strong>. Установите пароль <code>Boot1234</code>. Выйдите с сохранением (F10). При повторном входе в симулятор проверьте, запрашивается ли пароль. Затем сбросьте его, введя текущий.<br>
+<strong>Критерий готовности:</strong> Вы знаете разницу между Power-On Password и Supervisor Password и можете объяснить, когда нужен каждый из них.</p>
+<hr>
+<h3 id="задача-7.-настройка-sata-controller-mode-для-установки-ос">Задача 7. Настройка SATA Controller Mode для установки ОС</h3>
+<p><strong>Цель:</strong> Понять, как режим контроллера влияет на видимость диска при установке Windows.<br>
+<strong>Задание:</strong> Перейдите в <strong>Config → Storage → SATA Controller Mode</strong> (или <strong>NVMe Mode</strong>). Посмотрите варианты: <strong>AHCI</strong>, <strong>RAID</strong>, <strong>Intel RST</strong>. Переключите с <strong>AHCI</strong> на <strong>RAID</strong>, затем обратно. Обратите внимание на предупреждение о возможной потере данных при смене режима.<br>
+<strong>Критерий готовности:</strong> Вы можете объяснить, почему при смене режима SATA установленная Windows может перестать загружаться .</p>
+<hr>
+<h3 id="задача-8.-просмотр-и-очистка-системного-журнала-событий-event-log">Задача 8. Просмотр и очистка системного журнала событий (Event Log)</h3>
+<p><strong>Цель:</strong> Научиться диагностировать проблемы через встроенный журнал UEFI.<br>
+<strong>Задание:</strong> Перейдите в <strong>Main → System Summary</strong> или <strong>Config → Diagnostics</strong>. Найдите раздел <strong>Event Log</strong> (или <strong>System Event Log</strong>). Просмотрите последние записи. Найдите опцию <strong>Clear Event Log</strong> и выполните очистку. Запишите, какие типы событий обычно фиксируются (ошибки POST, изменения конфигурации).<br>
+<strong>Критерий готовности:</strong> Вы знаете, где искать журнал, и можете назвать хотя бы одну причину, по которой стоит его очистить перед передачей устройства .</p>
+<hr>
+<h3 id="задача-9.-восстановление-заводских-настроек-с-сохранением-пользовательских-данных">Задача 9. Восстановление заводских настроек с сохранением пользовательских данных</h3>
+<p><strong>Цель:</strong> Отработать разницу между <code>Load Factory Defaults</code> и <code>Reset System to Factory Defaults</code>.<br>
+<strong>Задание:</strong> Перейдите в <strong>Restart → Load Factory Defaults</strong>. Подтвердите. Затем найдите в <strong>Security</strong> опцию <strong>Reset System to Factory Defaults</strong>. Прочитайте предупреждение (обычно требует отключения Absolute Persistence и удаления паролей NVMe). Не выполняйте сброс — просто зафиксируйте разницу между двумя опциями.<br>
+<strong>Критерий готовности:</strong> Вы можете объяснить, в каком случае используется <code>Load Factory Defaults</code>, а в каком — полный сброс системы .</p>
+<hr>
+<h3 id="задача-10.-полный-сценарий-подготовка-нового-сотрудника-it-администратор">Задача 10. Полный сценарий: подготовка нового сотрудника (IT-администратор)</h3>
+<p><strong>Цель:</strong> Закрепить все навыки в реалистичном рабочем сценарии.<br>
+<strong>Задание (последовательно):</strong></p>
+<ol>
+<li>Включить <strong>аппаратную виртуализацию</strong> (для будущих VM).</li>
+<li>Включить <strong>TPM</strong> (для BitLocker).</li>
+<li>Установить <strong>Power-On Password</strong> (физическая защита).</li>
+<li>Отключить <strong>Fast Boot</strong> (чтобы сотрудник мог загрузиться с USB при необходимости).</li>
+<li>Настроить <strong>After Power Loss → Power On</strong> (рабочая станция должна включаться после сбоя питания).</li>
+<li>Сохранить и выйти (F10). При повторном входе проверить все настройки. Затем сбросить пароль и вернуть Fast Boot.</li>
+</ol>
+<p><strong>Критерий готовности:</strong> Все шесть шагов выполнены без подсказок, настройки проверены после повторного входа.</p>
+</div>
+</body>
+
+</html>
